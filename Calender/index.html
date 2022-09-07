@@ -1,0 +1,55 @@
+<!DOCTPYE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+<!-- TAKEN REFERENCE FROM https://codepen.io/peanav/pen/ulkof -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<div id="calendar"></div>
+
+<div id='formDiv'>
+  <fieldset style='padding:0 20px 20px 20px'>
+    <legend>
+      <h2> Add An Event </h2>
+    </legend>
+    <form name='myForm' onsubmit="myFunc()">
+      <table>
+        <tr>
+          <td>Name:</td>
+          <td><input type="text" name="eventName" id="eventName" required></td>
+        </tr>
+        <tr>
+          <td>Type:</td>
+          <td style="display: flex;">
+            <select class="selectMenu" id="eventType" name="eventType" onchange="displayCol()" required>
+            <option value="">Select One</option>
+            <option value="Event">Event</option>
+            <option value="Leisure">Leisure</option>
+            <option value="Family Time">Family Time</option>
+            </select>
+            <div id="eventColor"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>Date:</td>
+          <td><input type="date" name="eventDate" id="eventDate" required></td>
+        </tr>
+        <tr>
+          <td><input type="submit" id="addEventBTN" value="Add Event"></td>
+          <td><button id="closeBTN" onclick="closeForm()" form="noForm">Close Window</button></td>
+        </tr>
+      </table>
+    </form>
+  </fieldset>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
